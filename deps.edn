@@ -1,0 +1,6 @@
+{:deps
+ {org.clojure/clojure {:mvn/version "1.10.1"}
+ org.suskalo/discljord
+  {:git/url "git@github.com:IGJoshua/discljord.git"
+   :git/sha "f4942108038463b4c381c1ab152cdb2ae4863b38"}}
+}
