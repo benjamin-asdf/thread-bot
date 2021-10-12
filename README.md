@@ -8,4 +8,8 @@ A bot reproducing a bug with discord or discljord api
 -  Add bot to a test server
 - @Mention the bot
 - wait for the bot to create a channel
-- type in channel and observe the logs
+- message as user in channel and observe the logs
+
+- expectation: bot recieves events from thread, since he can view it
+
+- what happens: bot doesn't recieve "message-create" event
