@@ -16,7 +16,7 @@ add a config.edn file
 - run bot with core ns as entry point
 -  Add bot to a test server
 - @Mention the bot
-- wait for the bot to create a channe
+- wait for the bot to create a thread
 - message as user in channel and observe the logs
 
 - expectation: bot recieves events from thread, since he can view it
