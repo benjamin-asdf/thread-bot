@@ -24,6 +24,7 @@
    {:keys [channel-id author mentions id]
     :as _data}]
   (let [channel @(discord-rest/get-channel!
+                  (:rest @state)
                   channel-id)]
     (println
      "Message create channel: "
@@ -36,7 +37,8 @@
          (:rest @state)
          channel-id
          id
-         "BotsChannel")
+         "BotsChannel"
+         60)
         (discord-rest/create-message!
          (:rest @state)
          channel-id
@@ -66,6 +68,7 @@
 (defn -main [& args]
   (reset! state (start-bot! (:token config) :guild-messages))
   (reset! bot-id (:id @(discord-rest/get-current-user! (:rest @state))))
-  (try
-    (message-pump! (:events @state) handle-event)
-    (finally (stop-bot! @state))))
+  (future
+    (try
+      (message-pump! (:events @state) handle-event)
+      (finally (stop-bot! @state)))))
