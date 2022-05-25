@@ -22,3 +22,5 @@ add a config.edn file
 - expectation: bot recieves events from thread, since he can view it
 
 - what happens: bot doesn't recieve "message-create" event
+
+> *info* this bug has been resolved in recent versions of disclojrd
